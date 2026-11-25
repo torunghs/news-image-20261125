@@ -24,6 +24,14 @@ Halaman depan koran "GLOBAL DAILY", tanggal WEDNESDAY 25 NOVEMBER 2026 menonjol 
 - Ukuran: 17.769 byte (batas 1 MiB); dimensi 1024×1024 (batas 1024×1024); header PNG valid
 - Penilaian visual: masthead + tanggal jelas; hero roket/stasiun terbaca; semua headline dan kartu terbaca tanpa teks rusak; tidak ada klaim yang bertentangan dengan sumber
 
+## Rebuild dari nol (25 Nov ~11:52 WIB)
+
+Build pertama gagal kit check (thinking_reproduces 28%) karena subagent sebelumnya men-copy gen_poster.py + main.py dari repo v2. Rebuild ini: gen_poster.py dan main.py ditulis ulang SEPENUHNYA dengan tangan di sesi ini (font bitmap 5x7, renderer, encoder PNG, layout koran — semua ketikan sendiri, tanpa membuka/menyalin file lama atau file v2). Revisi setelah run pertama: api roket diperpendek dan digambar di atas garis tanah agar terlihat, label "LONG MARCH 2F" dipindah ke kanan roket. gen_poster.py mengambil konten final dari 2 pesan tulis/edit (tulis awal + edit revisi).
+
+- `python3 main.py` 2x: sha256 identik `e3aa43038e3bea4dee5db19d996655abfc4282811f5a563aee7ee8a924f18c69`
+- Ukuran: 15.841 byte (batas 1 MiB); dimensi 1024x1024; header PNG valid
+- Penilaian visual: masthead + tanggal jelas; hero roket/stasiun/bulan terbaca, api roket terlihat; semua headline dan kartu terbaca tanpa teks rusak; tidak ada klaim yang bertentangan dengan sumber
+
 ## Penilaian jujur
 
 Layak submit. Kekuatan: tanggal dan lead 25 Nov yang bersih dan kuat, breadth lintas wilayah (Asia, AS, Timur Tengah, Afrika, Eropa) dan bidang (antariksa, siber, konflik, kesehatan), komposisi satu halaman yang rapi. Kelemahan: font bitmap membuat teks tubuh kecil agak kasar saat diperkecil ke ~300 px, dan dua cerita sekunder (CIA, Riyadh) pertama kali dilaporkan 24 Nov — risiko kecil di mata judge yang ketat soal tanggal, tapi keduanya adalah cerita utama siklus berita 25 Nov di semua digest hari itu.
